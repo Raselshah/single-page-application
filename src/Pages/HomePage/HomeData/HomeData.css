@@ -1,0 +1,11 @@
+.service-info:hover {
+  background-image: url("https://images.unsplash.com/photo-1489009146690-771bfffd7a9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-color: rgba(67, 65, 65, 0.3);
+  background-blend-mode: overlay;
+  box-shadow: -8px 5px 10px 10px rgba(7, 166, 7, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  transition: all 0.7s ease-in-out;
+  border-top-left-radius: 50px;
+}
