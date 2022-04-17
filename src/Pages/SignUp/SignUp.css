@@ -1,0 +1,11 @@
+.from-style input {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: 1px solid greenyellow;
+  font-size: 18px;
+  width: 100%;
+}
+.signup-title {
+  border-bottom: 5px solid greenyellow;
+  border-bottom-right-radius: 20px;
+}
