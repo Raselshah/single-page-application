@@ -7,11 +7,13 @@ import About from "./Pages/About/About";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import NotAPage from "./Pages/NotAPage/NotAPage";
 import Footer from "./Pages/Footer/Footer";
+import BannerPage from "./Pages/BannerPage/BannerPage";
 
 function App() {
   return (
     <div className="App">
       <NavMenu />
+      <BannerPage />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
