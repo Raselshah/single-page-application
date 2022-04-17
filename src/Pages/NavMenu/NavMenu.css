@@ -1,0 +1,9 @@
+.navbar a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 20px;
+}
+.navbar a:hover{
+    color: greenyellow;
+}
