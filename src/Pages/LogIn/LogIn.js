@@ -47,6 +47,7 @@ const LogIn = () => {
 
   const logInButton = (event) => {
     event.preventDefault();
+    signInWithEmailAndPassword(oldUserInfo.email, oldUserInfo.password);
   };
   return (
     <div className="h-full flex flex-col justify-center items-center mt-5 w-1/3 mx-auto">

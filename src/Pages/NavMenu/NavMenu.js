@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -5,6 +6,10 @@ import CustomLink from "../CustomLink/CustomLink";
 import "./NavMenu.css";
 const NavMenu = () => {
   const [user, loading, error] = useAuthState(auth);
+
+  const logOut = () => {
+    signOut(auth);
+  };
   return (
     <div
       style={{ background: "#01060f" }}
@@ -20,7 +25,13 @@ const NavMenu = () => {
         <CustomLink to="/about">About me</CustomLink>
         <CustomLink to="/signup">Sign Up</CustomLink>
         {user?.uid ? (
-          <CustomLink to="/login">Log Out</CustomLink>
+          <CustomLink
+            className={"bg-green-400 px-4 rounded-lg hover:bg-green-500"}
+            onClick={logOut}
+            to="/login"
+          >
+            Log Out
+          </CustomLink>
         ) : (
           <CustomLink to="/login">Log In</CustomLink>
         )}
