@@ -10,7 +10,7 @@ const HomePage = () => {
     <>
       <BannerPage />
       <div className="feature-bg">
-        <div className=" grid grid-cols-3 mb:grid-cols-2 container mx-auto gap-10 ">
+        <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb:grid-cols-2 container mx-auto gap-10 ">
           {dataInfo.map((singleData) => (
             <HomeData key={singleData.id} singleData={singleData}></HomeData>
           ))}

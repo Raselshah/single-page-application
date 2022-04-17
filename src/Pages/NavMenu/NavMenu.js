@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import "./NavMenu.css";
 const NavMenu = () => {
+  const [user, loading, error] = useAuthState(auth);
   return (
     <div
       style={{ background: "#01060f" }}
@@ -16,7 +19,11 @@ const NavMenu = () => {
         <CustomLink to="/blogs">Blogs</CustomLink>
         <CustomLink to="/about">About me</CustomLink>
         <CustomLink to="/signup">Sign Up</CustomLink>
-        <CustomLink to="/login">Log In</CustomLink>
+        {user?.uid ? (
+          <CustomLink to="/login">Log Out</CustomLink>
+        ) : (
+          <CustomLink to="/login">Log In</CustomLink>
+        )}
       </nav>
     </div>
   );
