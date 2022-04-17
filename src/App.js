@@ -9,6 +9,7 @@ import NotAPage from "./Pages/NotAPage/NotAPage";
 import Footer from "./Pages/Footer/Footer";
 import SignUp from "./Pages/SignUp/SignUp";
 import LogIn from "./Pages/LogIn/LogIn";
+import RequireAuth from "./RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -19,7 +20,14 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/about"
+          element={
+            <RequireAuth>
+              <About />
+            </RequireAuth>
+          }
+        />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />

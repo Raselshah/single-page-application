@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useEffect, useState } from "react";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import SocialLink from "../../hooks/SocialLink/SocialLink";
 
 const LogIn = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [getUser, getLoading, getError] = useAuthState(auth);
   const [oldUserInfo, setOldUserInfo] = useState({
     email: "",
     password: "",
@@ -14,6 +21,19 @@ const LogIn = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+  // useEffect(() => {
+  //   if (getUser) {
+  //     navigate(from, { replace: true });
+  //   }
+  // }, [getUser]);
 
   const handleLogEmailButton = (event) => {
     const emailCheck = /\S+@\S+\.\S+/;
@@ -41,9 +61,6 @@ const LogIn = () => {
       setOldUserInfo({ ...oldUserInfo, password: "" });
     }
   };
-
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
 
   const logInButton = (event) => {
     event.preventDefault();
