@@ -100,7 +100,7 @@ const LogIn = () => {
     signInWithEmailAndPassword(oldUserInfo.email, oldUserInfo.password);
   };
   return (
-    <div className="h-full flex flex-col justify-center items-center mt-5 w-1/3 mx-auto">
+    <div className="h-full flex flex-col justify-center items-center mt-5 md:w-2/4 sm:w-full lg:w-1/3 mx-auto">
       <h2 className="text-black text-3xl font-bold uppercase tracking-widest signup-title">
         Fit<span style={{ color: "greenyellow" }}>L</span>ife G
         <span style={{ color: "greenyellow" }}>y</span>m
