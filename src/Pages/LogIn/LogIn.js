@@ -156,7 +156,6 @@ const LogIn = () => {
           Log In
         </button>
 
-        <SocialLink />
         <ToastContainer
           position="top-center"
           autoClose={5000}
@@ -168,6 +167,7 @@ const LogIn = () => {
           draggable
           pauseOnHover
         />
+        <SocialLink />
       </form>
     </div>
   );

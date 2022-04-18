@@ -1,11 +1,13 @@
-## This website was a gym trainer personal website
+## ..This website was a gym trainer personal website
 
-### User authentication implement
+### .User authentication implement
 
-### buy now button was dynamic login system implement
+### .buy now button was dynamic login system implement
 
-### email,password and google and github sign up/ log in system
+### .email,password and google and github sign up/ log in system
 
-## Technology use by React JS,Tailwind,firebase hooks,firebase authentication system
+## .Technology use by React JS,Tailwind,firebase hooks,firebase authentication system
 
 ### Live Site
+
+https://fitlife-gym.web.app/

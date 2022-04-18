@@ -15,7 +15,7 @@ const NavMenu = () => {
       style={{ background: "#01060f" }}
       className="flex items-center justify-around h-20"
     >
-      <h2 className="text-white text-3xl font-bold uppercase tracking-widest">
+      <h2 className="text-white logo text-3xl font-bold uppercase tracking-widest">
         Fit<span style={{ color: "greenyellow" }}>L</span>ife G
         <span style={{ color: "greenyellow" }}>y</span>m
       </h2>
