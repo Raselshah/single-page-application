@@ -4,6 +4,7 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 const SocialLink = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -11,9 +12,10 @@ const SocialLink = () => {
   const [signInWithGithub, githubUser, githubLoading, githubError] =
     useSignInWithGithub(auth);
 
-  // const googleSignInButton = () => {
-  //   signInWithGoogle();
-  // };
+  const navigate = useNavigate();
+  if (googleUser || githubUser) {
+    navigate("/");
+  }
   return (
     <div className="w-full">
       <button

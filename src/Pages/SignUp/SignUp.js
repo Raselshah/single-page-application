@@ -1,18 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SocialLink from "../../hooks/SocialLink/SocialLink";
 import "./SignUp.css";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { useNavigate } from "react-router-dom";
+import Loading from "../Loading/Loading";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  useEffect(() => {
+    if (error?.message) {
+      toast.warn("opps! try again", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [error?.message]);
+
+  useEffect(() => {
+    if (user) {
+      toast.success("Send email verification", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [user]);
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
+  if (loading) {
+    <Loading />;
+  }
+  if (user) {
+    navigate("/home");
+  }
 
   const [userError, setUserError] = useState({
     email: "",
@@ -57,11 +97,11 @@ const SignUp = () => {
     }
   };
 
-  console.log(userInfo.email, userInfo.password);
   const signUpEmailButton = (event) => {
     event.preventDefault();
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
   };
+
   return (
     <div className="h-full flex flex-col justify-center items-center mt-5 w-1/3 mx-auto">
       <h2 className="text-black text-3xl font-bold uppercase tracking-widest signup-title">
@@ -81,7 +121,7 @@ const SignUp = () => {
           placeholder="Email"
         />
         {userError?.email && (
-          <p className="text-red-400 text-start">{userError?.email} </p>
+          <p className="text-red-400">{userError?.email} </p>
         )}
         <input
           onChange={handlePasswordButton}
@@ -91,7 +131,7 @@ const SignUp = () => {
           placeholder="Password"
         />
         {userError?.password && (
-          <p className="text-red-400 text-start">{userError?.password} </p>
+          <p className="text-red-400">{userError?.password} </p>
         )}
         <input
           onChange={handleConfirmPasswordButton}
@@ -101,18 +141,22 @@ const SignUp = () => {
           placeholder="Confirm Password"
         />
         {userError?.confirmPassword && (
-          <p className="text-red-400 text-start">
-            {userError?.confirmPassword}
-          </p>
+          <p className="text-red-400">{userError?.confirmPassword}</p>
         )}
 
+        <button
+          onClick={() => navigate("/login")}
+          className="underline mt-2 text-green-400"
+        >
+          Already have an account?
+        </button>
         <button
           onClick={signUpEmailButton}
           className="hover:bg-green-600 hover:text-white bg-green-500 w-full text-lg font-bold text-white mt-10 py-2"
         >
           Sign Up
         </button>
-
+        <ToastContainer></ToastContainer>
         <SocialLink />
       </form>
     </div>

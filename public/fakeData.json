@@ -2,55 +2,55 @@
     {
         "id": "1",
         "category": "Fit Body",
-        "name": "Fitness primary level",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore doloribus eaque ad, sunt assumenda minima. Dignissimos nam, possimus dolor repellendus nostrum beatae natus repellat, molestias architecto quaerat accusantium magnam.",
-        "img":"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "name": "Space of 22,000 square feet!",
+        "description": "Our 22,000 square foot space allows us to carry everything you would look for in a gym! We have filled the gym with top of the line machines, weights and workout accessories to help all of our members reach their personal goals. We have a large class room that holds 80+ classes a week featuring zumba, yoga, pilates, muscle conditioning, trx and much more. Our spinning classes are allocated in a different room and holds 40 bikes. ",
+        "img" : "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         "price": 9.56
        
       },
     {
         "id": "2",
         "category": "Fit Body",
-        "name": "Fitness primary level",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore doloribus eaque ad, sunt assumenda minima. Dignissimos nam, possimus dolor repellendus nostrum beatae natus repellat, molestias architecto quaerat accusantium magnam.",
-        "img":"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "price": 9.56
+        "name": "Top of the line equipment",
+        "description": "FitLife Gym is proud to hold top of the line Technogym equipment. We make sure that we have all the equipment necessary for a fantastic workout no matter what your style may be. We have a variety of dumbbells that go up to 110lbs, 4 squat racks and 2 smith machines for our heavy lifters. For our cardio lovers we are equipped with a multitude of treadmills, ellipticals, stairmasters and rowing machines.",
+        "img" : "https://images.unsplash.com/photo-1580086319619-3ed498161c77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+        "price": 15.56
        
       },
     {
         "id": "3",
         "category": "Fit Body",
-        "name": "Fitness primary level",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore doloribus eaque ad, sunt assumenda minima. Dignissimos nam, possimus dolor repellendus nostrum beatae natus repellat, molestias architecto quaerat accusantium magnam.",
-        "img":"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "price": 9.56
+        "name": "YOGA CLASSES",
+        "description": "At FitLife Gym, we understand that life can get busy and tiring. That is why we have so many different classes available to you from sun rise to sun set. In the recent years, yoga has gained a huge following and has increased in popularity. Many people are starting to practice yoga and are seeing the great physical and mental benefits. Yoga practice is a great way to strengthen the bond between your mind and your body.",
+        "img": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "price": 20.99
        
       },
     {
         "id": "4",
         "category": "Fit Body",
-        "name": "Fitness primary level",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore doloribus eaque ad, sunt assumenda minima. Dignissimos nam, possimus dolor repellendus nostrum beatae natus repellat, molestias architecto quaerat accusantium magnam.",
-        "img":"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "price": 9.56
+        "name": "AEROBICS CLASSES",
+        "description": "If you enjoy taking classes, then FitLife Gym has got you covered. We have group fitness classes all week long and throughout the day. Aerobic classes are meant to make you move, sweat and get a little out of breath – it’s all part of the FitLife Gym fun! We host a variety of different classes that cater to all kinds of interests",
+        "img": "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "price": 26.10
        
       },
     {
         "id": "5",
         "category": "Fit Body",
-        "name": "Fitness primary level",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore doloribus eaque ad, sunt assumenda minima. Dignissimos nam, possimus dolor repellendus nostrum beatae natus repellat, molestias architecto quaerat accusantium magnam.",
-        "img":"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "price": 9.56
+        "name": "PRIVATE WOMEN ONLY STUDIO",
+        "description": "At FitLife Gym, we have a special section reserved and accessed by only women. This woman’s only section is a huge asset for us at FitLife Gym because it is known that one of the barriers experienced by women includes discomfort or shyness when surrounded by many people working out. The women’s only gym can also be used as a transition into working out in the main gym",
+        "img":"https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "price": 25.56
        
       },
     {
         "id": "6",
         "category": "Fit Body",
-        "name": "Fitness primary level",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa tempore doloribus eaque ad, sunt assumenda minima. Dignissimos nam, possimus dolor repellendus nostrum beatae natus repellat, molestias architecto quaerat accusantium magnam.",
-        "img":"https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "price": 9.56
+        "name": "PERSONAL TRAINING",
+        "description": "At FitLife Gym, our personal trainers are here to help all members seeking to make the most out of their workouts. A personal trainer can help you establish a timeline for realistic goals and break them down into smaller components. They are very friendly, knowledgeable and highly motivated in helping you achieve your fitness goals. On your first session, you can expect to share a little bit about yourself, your medical history and what your lifestyle consists of. ",
+        "img":"https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+        "price": 40.50
        
       }
 ]

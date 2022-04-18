@@ -1,20 +1,54 @@
 import React, { useEffect, useState } from "react";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import SocialLink from "../../hooks/SocialLink/SocialLink";
+import Loading from "../Loading/Loading";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending, ressetError] =
+    useSendPasswordResetEmail(auth);
   const [getUser, getLoading, getError] = useAuthState(auth);
   const [oldUserInfo, setOldUserInfo] = useState({
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    if (error?.message) {
+      toast.warn("Opps! try again", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [error?.message]);
+
+  if (sending) {
+    toast.success("send email verification now!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
 
   const [oldUserError, setOldUserError] = useState({
     email: "",
@@ -26,14 +60,13 @@ const LogIn = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  if (user) {
+  if (user || getUser) {
     navigate(from, { replace: true });
   }
-  // useEffect(() => {
-  //   if (getUser) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [getUser]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const handleLogEmailButton = (event) => {
     const emailCheck = /\S+@\S+\.\S+/;
@@ -83,7 +116,9 @@ const LogIn = () => {
           id=""
           placeholder="Email"
         />
-        {oldUserError?.email && <p>{oldUserError?.email}</p>}
+        {oldUserError?.email && (
+          <p className="text-red-400">{oldUserError?.email}</p>
+        )}
         <input
           onChange={handleLogPasswordButton}
           type="password"
@@ -91,7 +126,29 @@ const LogIn = () => {
           id=""
           placeholder="Password"
         />
-        {oldUserError?.password && <p>{oldUserError?.password}</p>}
+        {oldUserError?.password && (
+          <p className="text-red-400">{oldUserError?.password}</p>
+        )}
+
+        {error?.message && (
+          <p className="text-red-400 mt-2">{error?.message}</p>
+        )}
+
+        <div className="w-full">
+          <button
+            onClick={() => navigate("/signup")}
+            className="underline mt-2 text-green-400 mx-6"
+          >
+            Create new Account?
+          </button>
+
+          <button
+            onClick={() => sendPasswordResetEmail(oldUserInfo.email)}
+            className="underline mt-2 text-red-400"
+          >
+            Forget Password?
+          </button>
+        </div>
         <button
           onClick={logInButton}
           className="hover:bg-green-600 hover:text-white bg-green-500 w-full text-lg font-bold text-white mt-10 py-2"
@@ -100,6 +157,17 @@ const LogIn = () => {
         </button>
 
         <SocialLink />
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </form>
     </div>
   );
